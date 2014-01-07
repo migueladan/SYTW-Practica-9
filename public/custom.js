@@ -11,7 +11,8 @@ es.onmessage = function(e){
     $("#chat").scrollTop(height * 1000);
 };
 
-$("#chat-submit").live("submit", function(e){
+//$("#chat-submit").live("submit", function(e){
+$("#chat-submit").submit(function(e){
     var messages_box = $("#message");
     $.post('/chat', {
         message: $('#message').val()
