@@ -48,3 +48,10 @@ body {
 .users-container ul {
     list-style: none;
 }
+.usuario-lista {
+    border:1px solid black;
+    cursor:pointer;
+}
+.privado {
+
+}
