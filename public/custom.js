@@ -53,7 +53,7 @@ user_source.onmessage = function(e){
                 var messages_box = $("#msg-"+ destinatario +"");
                 
                     $.post('/chat', {
-                        message: $("#msg-"+ destinatario +"").val()
+                        message: "/" + destinatario + " " + $("#msg-"+ destinatario +"").val()
                     });
                     messages_box.val('');
                     messages_box.focus();

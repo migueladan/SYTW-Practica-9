@@ -12,4 +12,8 @@
     #users{:class => "users-container"}
   
   #privados
+%script{:type=>"text/javascript"}
+  var origen = "#{session['user']}";
+
+  
 %script{:src => "custom.js"}
