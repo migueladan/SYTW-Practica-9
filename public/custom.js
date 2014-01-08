@@ -1,6 +1,7 @@
+/*
+    Miguel A. Negrón Almenara: alu0100356137@ull.edu.es
+*/
 var es = new EventSource('/chat-stream');
-
-
 es.onmessage = function(e){
     
     var chat = $("#chat");
@@ -109,7 +110,14 @@ user_source.onmessage = function(e){
                 var ejem = $('<div class="privado" title='+$(this).attr("id").substring(2) +' id =v-'+ $(this).attr("id").substring(2) +' >').append(interior);
 
                 privis.append( ejem );
-                ejem.dialog();
+                ejem.dialog( 
+                    { 
+                        close: function(event, ui) 
+                        { 
+                            $(this).dialog('destroy').remove()
+                        } 
+                    }); 
+
                 $("#form-"+ destinatario +"").submit(function(e){
                     var messages_box = $("#msg-"+ destinatario +"");
                     
@@ -130,4 +138,6 @@ user_source.onmessage = function(e){
     });*/
 
 };
-    
+/*
+    Miguel A. Negrón Almenara: alu0100356137@ull.edu.es
+*/    
