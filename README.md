@@ -39,4 +39,4 @@ Puedes consultar la version en Heroku desde aqui [http://chatsytw.herokuapp.com/
 
 ##Agradecimientos
 
-A nadie. No copiéis ésta práctica porq dará el cante. Un saludo! Se acabó el curso!
+A nadie. No copiéis esta práctica porq dará el cante. Un saludo! Se acabó el curso!
