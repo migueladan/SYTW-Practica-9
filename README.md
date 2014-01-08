@@ -39,4 +39,4 @@ Puedes consultar la version en Heroku desde aqui [http://chatsytw.herokuapp.com/
 
 ##Agradecimientos
 
-A nadie. No copiéis esta práctica porq dará el cante. Un saludo! Se acabó el curso!
+A Casiano por abrirnos al mundo de la programación web de calidad. No copiéis esta práctica porq dará el cante. 
