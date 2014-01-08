@@ -24,6 +24,7 @@ $("#chat-submit").submit(function(e){
     e.preventDefault();
 });
 
+
 var user_source = new EventSource('/chat-users');
 
 user_source.onmessage = function(e){
@@ -42,11 +43,23 @@ user_source.onmessage = function(e){
     }
     list.on("click", "li", function(){                
             //alert("click en:"+$(this).attr("id") );
-            //var interior = '<div class="privado-interior"> <div class="privado-mensajes"></div>   </div>';
-            var ejem = $('<div class="privado" title='+$(this).attr("id").substring(2) +' id =v-'+ $(this).attr("id").substring(2) +' >').append("<p>Esto es un privado<p>");
+            var destinatario = $(this).attr("id").substring(2);
+            var interior = '<div class="privado-interior"> <div class="privado-mensajes"></div><div class="privado-formulario"><form id="form-'+ destinatario +'"><input type="text" id="msg-'+ destinatario +'" class="message"/><input class="i-button" type="submit"/></form></div>   </div>';
+            var ejem = $('<div class="privado" title='+$(this).attr("id").substring(2) +' id =v-'+ $(this).attr("id").substring(2) +' >').append(interior);
 
             privis.append( ejem );
             ejem.dialog();
+            $("#form-"+ destinatario +"").submit(function(e){
+                var messages_box = $("#msg-"+ destinatario +"");
+                
+                    $.post('/chat', {
+                        message: $("#msg-"+ destinatario +"").val()
+                    });
+                    messages_box.val('');
+                    messages_box.focus();
+
+                e.preventDefault();
+            });
 
     });
     
