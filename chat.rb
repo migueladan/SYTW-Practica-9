@@ -94,8 +94,8 @@ class ChatWithFrames < Sinatra::Base
         stream_receiver = @@clientsByName[name]
         stream_sender = @@clientsByName[sender]
         
-        stream_receiver << "data: #{sender}: #{message}\n\n"
-        stream_sender << "data: #{sender}: #{message}\n\n"
+        stream_receiver << "data: * #{sender} #{message}\n\n"
+        stream_sender << "data: * #{sender} #{message}\n\n"
       else #User not found, then broadcast
         broadcast(message, session['user'])
       end
